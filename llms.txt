@@ -1,0 +1,45 @@
+# orange&co
+
+orange&co makes premium jewelry-grade timepieces, launching in limited numbered editions. This repository contains the code and configuration for the pre-launch waitlist landing page.
+
+## System Architecture
+
+The site is built as a highly responsive, rich-aesthetic static landing page using Vanilla HTML, CSS, and JavaScript. It communicates directly with a Supabase PostgreSQL database backend for all dynamic features.
+
+### Core Files
+* `index.html`: Main landing page, including CSS variables, layouts, responsiveness scripts, inputs sanitization, dynamic countdown, and waitlist registration.
+* `config.js`: Exports global `window.__APP_CONFIG` configuration tokens (Supabase endpoint URL and Anonymous API Key).
+* `robots.txt`: standard search crawler directives.
+* `sitemap.xml`: XML sitemap containing the landing page URL.
+* `llms.txt`: This documentation file for LLM and agent reference.
+
+## Database Integration (Supabase)
+
+All dynamic site states are fetched live directly from the Supabase database with zero hardcoded fallbacks:
+
+### 1. Waitlist Table (`public.waitlist`)
+* **Purpose**: Stores waitlist signups.
+* **Fields**:
+  * `email` (text, primary key)
+  * `signed_up_at` (timestamp with time zone)
+* **Permissions**: Public write is allowed via post requests. Public select/read is strictly denied using PostgreSQL Row Level Security (RLS) to protect subscriber emails.
+
+### 2. Settings Table (`public.settings`)
+* **Purpose**: Configures landing page parameters live.
+* **Fields**:
+  * `key` (text, primary key)
+  * `value` (text)
+* **Configurations**:
+  * `launch_date` (ISO 8601 string): Determines countdown timing (e.g., `'2026-10-30T00:00:00Z'`).
+* **Permissions**: Public read-only access is allowed to anonymous users.
+
+### 3. Count RPC Function (`public.get_waitlist_count()`)
+* **Purpose**: Safely retrieves the current signup count from `public.waitlist` without exposing subscriber emails.
+* **Security**: Runs as `SECURITY DEFINER` with execute privileges granted to the `anon` role.
+
+---
+
+## Social Channels & Contacts
+* **Instagram**: [https://www.instagram.com/orangeandco.pk/](https://www.instagram.com/orangeandco.pk/)
+* **Facebook**: [https://www.facebook.com/profile.php?id=61590506905194](https://www.facebook.com/profile.php?id=61590506905194)
+* **Contact Email**: `Orangeandco.pk@proton.me`

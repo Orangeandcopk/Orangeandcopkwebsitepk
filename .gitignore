@@ -1,0 +1,21 @@
+# Local Configuration & Secrets
+# NEVER commit your Supabase Anon keys or private configs to Git.
+# Serve config.js dynamically on your host (Netlify/Vercel) or keep it local.
+config.js
+
+# Logs and databases
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
