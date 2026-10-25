@@ -2,44 +2,104 @@
 
 orange&co makes premium jewelry-grade timepieces, launching in limited numbered editions. This repository contains the code and configuration for the pre-launch waitlist landing page.
 
-## System Architecture
+## Product Overview
 
-The site is built as a highly responsive, rich-aesthetic static landing page using Vanilla HTML, CSS, and JavaScript. It communicates directly with a Supabase PostgreSQL database backend for all dynamic features.
+**Brand:** orange&co (Orange & Co Timepieces)
+**Category:** Luxury handcrafted watches / Jewelry-grade timepieces
+**Market Position:** Premium accessible luxury — between fashion watches and high horology
+**Unique Value:** "Time as a piece of jewelry" — watches designed with the meticulous precision of fine jewelry, produced in limited numbered editions
 
-### Core Files
-* `index.html`: Main landing page, including CSS variables, layouts, responsiveness scripts, inputs sanitization, dynamic countdown, and waitlist registration.
-* `config.js`: Exports global `window.__APP_CONFIG` configuration tokens (Supabase endpoint URL and Anonymous API Key).
-* `robots.txt`: standard search crawler directives.
-* `sitemap.xml`: XML sitemap containing the landing page URL.
-* `llms.txt`: This documentation file for LLM and agent reference.
+**Target Audience:**
+- Watch enthusiasts seeking unique, limited-edition pieces
+- Jewelry lovers who appreciate craftsmanship
+- Gift buyers for special occasions (weddings, anniversaries, milestones)
+- Collectors of numbered edition timepieces
+- Pakistani luxury market + international shipping
 
-## Database Integration (Supabase)
+**Key Differentiators:**
+- Jewelry-grade craftsmanship (not mass-produced)
+- Limited numbered editions (exclusivity)
+- Gold plating & premium materials
+- Direct-to-consumer pricing (no retail markup)
+- Pakistan-based brand with global shipping
 
-All dynamic site states are fetched live directly from the Supabase database with zero hardcoded fallbacks:
+## Key Pages
 
-### 1. Waitlist Table (`public.waitlist`)
-* **Purpose**: Stores waitlist signups.
-* **Fields**:
-  * `email` (text, primary key)
-  * `signed_up_at` (timestamp with time zone)
-* **Permissions**: Public write is allowed via post requests. Public select/read is strictly denied using PostgreSQL Row Level Security (RLS) to protect subscriber emails.
+- **Homepage / Waitlist:** https://orangeandco.pk/ — Main landing page with countdown and waitlist signup
+- **Pricing:** https://orangeandco.pk/pricing.md — Machine-readable pricing for AI agents
+- **FAQ:** https://orangeandco.pk/#faq — Frequently asked questions
+- **Instagram:** https://www.instagram.com/orangeandco.pk/
+- **Facebook:** https://www.facebook.com/profile.php?id=61590506905194
+- **Contact:** Orangeandco.pk@proton.me
 
-### 2. Settings Table (`public.settings`)
-* **Purpose**: Configures landing page parameters live.
-* **Fields**:
-  * `key` (text, primary key)
-  * `value` (text)
-* **Configurations**:
-  * `launch_date` (ISO 8601 string): Determines countdown timing (e.g., `'2026-10-30T00:00:00Z'`).
-* **Permissions**: Public read-only access is allowed to anonymous users.
+## Business Model
 
-### 3. Count RPC Function (`public.get_waitlist_count()`)
-* **Purpose**: Safely retrieves the current signup count from `public.waitlist` without exposing subscriber emails.
-* **Security**: Runs as `SECURITY DEFINER` with execute privileges granted to the `anon` role.
+- Direct-to-consumer e-commerce
+- Limited edition drops (numbered runs of 75-150 pieces)
+- Waitlist-based launch model (creates scarcity & demand)
+- No permanent inventory — each edition sells out
+- Worldwide shipping from Pakistan
 
----
+## Launch Timeline
 
-## Social Channels & Contacts
-* **Instagram**: [https://www.instagram.com/orangeandco.pk/](https://www.instagram.com/orangeandco.pk/)
-* **Facebook**: [https://www.facebook.com/profile.php?id=61590506905194](https://www.facebook.com/profile.php?id=61590506905194)
-* **Contact Email**: `Orangeandco.pk@proton.me`
+- **Current Phase:** Pre-launch waitlist building
+- **Launch Date:** Managed via Supabase settings table (dynamic)
+- **Edition Size:** 75-150 pieces per edition
+- **Frequency:** 2-4 editions per year
+
+## Competitive Landscape
+
+**Direct Competitors (Jewelry-grade watches):**
+- Nordgreen, Daniel Wellington, MVMT (fashion watches — lower tier)
+- Mejuri, Catbird (jewelry brands with watches)
+- Independent microbrands: Baltic, Lorier, Zelos
+
+**Aspirational Competitors:**
+- Cartier, Tiffany & Co. (high jewelry watches)
+- Rolex, Omega (traditional luxury — different positioning)
+
+## Content Resources for AI
+
+**Glossary (definitions AI can cite):**
+- What is a jewelry-grade watch?
+- What are limited edition numbered watches?
+- Watch movement types explained
+- Gold plated vs solid gold watches
+- Watch complications guide
+
+**Comparisons (structured data AI prefers):**
+- orange&co vs other jewelry watch brands
+- Best limited edition watches under PKR 300k
+- Jewelry-grade watches vs fashion watches
+
+**Guides (how-to content):**
+- How to choose your first luxury watch
+- Watch investment guide for Pakistan
+- How to care for gold-plated timepieces
+- Watch sizing and fit guide
+
+## Authority Signals
+
+- **Founded:** 2025
+- **Location:** Pakistan (designed locally, manufactured with specialist partners)
+- **Materials:** Gold plating, sapphire crystal, Swiss/Japanese movements
+- **Production:** Specialist watchmakers, numbered editions
+- **Social Proof:** Waitlist count displayed live on homepage
+- **Press/Features:** [To be added as secured]
+
+## Structured Data Available
+
+- Organization schema (homepage)
+- FAQPage schema (homepage FAQ section)
+- Product schema (homepage + future product pages)
+- WebSite schema (sitelinks search box)
+- BreadcrumbList schema (on all content pages)
+
+## AI Bot Access
+
+All major AI search crawlers allowed in robots.txt:
+- GPTBot, ChatGPT-User (OpenAI)
+- PerplexityBot (Perplexity)
+- ClaudeBot, anthropic-ai (Anthropic)
+- Google-Extended (Gemini, AI Overviews)
+- Bingbot (Copilot)
