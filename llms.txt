@@ -25,9 +25,9 @@ orange&co makes premium jewelry-grade timepieces, launching in limited numbered 
 
 ## Key Pages
 
-- **Homepage / Waitlist:** https://orangeandco.pk/ — Main landing page with countdown and waitlist signup
-- **Pricing:** https://orangeandco.pk/pricing.md — Machine-readable pricing for AI agents
-- **FAQ:** https://orangeandco.pk/#faq — Frequently asked questions
+- **Homepage / Waitlist:** https://orangeandcopk.vercel.app/ — Main landing page with countdown and waitlist signup
+- **Pricing:** https://orangeandcopk.vercel.app/pricing.md — Machine-readable pricing for AI agents
+- **FAQ:** https://orangeandcopk.vercel.app/#faq — Frequently asked questions
 - **Instagram:** https://www.instagram.com/orangeandco.pk/
 - **Facebook:** https://www.facebook.com/profile.php?id=61590506905194
 - **Contact:** Orangeandco.pk@proton.me
