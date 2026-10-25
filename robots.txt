@@ -27,4 +27,4 @@ Allow: /
 # User-agent: CCBot
 # Disallow: /
 
-Sitemap: https://orangeandco.pk/sitemap.xml
+Sitemap: https://orangeandcopk.vercel.app/sitemap.xml
