@@ -61,12 +61,57 @@
   }
   </script>
 
-  <!-- FAQ Schema for AI Extraction -->
+<!-- FAQ Schema for AI Extraction -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  <!-- Product Schema -->
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When will the orange&co timepieces be available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are currently in the final stages of preparing our first limited edition drop. By joining the waitlist, you secure priority access to reserve your watch as soon as the launch goes live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there any payment required to join the waitlist?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Joining the waitlist is completely free and carries no obligation. It simply guarantees you receive updates first and priority access to the limited edition launch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you restock your pieces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our releases are produced in limited edition numbered runs. Once a specific run is completely reserved, it is not restocked, keeping every piece exclusive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle shipping and returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer worldwide shipping with tracking. Our customer support will be ready to help with any shipping inquiries and returns for a seamless experience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What materials are used in orange&co watches?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We work with different materials depending on the edition, including gold plating. Precise materials and caring guidelines will be specified on every listing."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Product Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,7 +129,10 @@
     "priceCurrency": "PKR",
     "url": "https://orangeandco.pk/"
   }
-  <!-- WebSite Schema for Sitelinks Search Box -->
+}
+</script>
+
+<!-- WebSite Schema for Sitelinks Search Box -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
